@@ -28,7 +28,7 @@ public enum SupportedManagers {
     HSQLDB(JdbcDrivers.HSQLDB.getSchemePrefix(), false), ORACLE(JdbcDrivers.ORACLE.getSchemePrefix(), true),
     SQLSERVER(JdbcDrivers.SQLSERVER.getSchemePrefix(), false),  CUBRID(JdbcDrivers.CUBRID.getSchemePrefix(), false),
     JTDS_SQLSERVER(JdbcDrivers.JTDS_SQLSERVER.getSchemePrefix(), false), DB2(JdbcDrivers.DB2.getSchemePrefix(), false),
-    DB2AS00(JdbcDrivers.DB2AS400.getSchemePrefix(), false),NETEZZA(JdbcDrivers.NETEZZA.getSchemePrefix(), true);
+    DB2AS400(JdbcDrivers.DB2AS400.getSchemePrefix(), false),NETEZZA(JdbcDrivers.NETEZZA.getSchemePrefix(), true);
 
     private final String schemePrefix;
 
