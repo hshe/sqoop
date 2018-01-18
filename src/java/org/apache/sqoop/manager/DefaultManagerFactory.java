@@ -27,6 +27,7 @@ import com.cloudera.sqoop.manager.ConnManager;
 
 import static org.apache.sqoop.manager.SupportedManagers.CUBRID;
 import static org.apache.sqoop.manager.SupportedManagers.DB2;
+import static org.apache.sqoop.manager.SupportedManagers.DB2AS00;
 import static org.apache.sqoop.manager.SupportedManagers.HSQLDB;
 import static org.apache.sqoop.manager.SupportedManagers.JTDS_SQLSERVER;
 import static org.apache.sqoop.manager.SupportedManagers.MYSQL;
@@ -82,6 +83,8 @@ public class DefaultManagerFactory
       return new SQLServerManager(NET_SOURCEFORGE_JTDS_JDBC_DRIVER, options);
     } else if (DB2.isTheManagerTypeOf(options)) {
       return new Db2Manager(options);
+    } else if (DB2AS00.isTheManagerTypeOf(options)) {
+      return new Db2AS400Manager(options);
     } else if (NETEZZA.isTheManagerTypeOf(options)) {
       if (options.isDirect()) {
         return new DirectNetezzaManager(options);
