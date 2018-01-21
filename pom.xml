@@ -93,9 +93,10 @@ ant instead. You have been warned!
     <hadoopVersion>0.20.203.0</hadoopVersion>
     -->
     <!-- FIXME Cloudera Distribution dependency version -->
-    <hadoopVersion>0.20.2-cdh3u1</hadoopVersion>
+    <!--<hadoopVersion>0.20.2-cdh3u1</hadoopVersion>-->
+    <hadoopVersion>2.6.2</hadoopVersion>
 
-    <hbaseVersion>0.90.3-cdh3u1</hbaseVersion>
+    <hbaseVersion>0.94.4</hbaseVersion>
     <log4j.version>1.2.16</log4j.version>
 
   </properties>
@@ -164,7 +165,7 @@ ant instead. You have been warned!
     </dependency>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-core</artifactId>
+      <artifactId>hadoop-common</artifactId>
       <version>${hadoopVersion}</version>
       <exclusions>
         <exclusion>
@@ -173,11 +174,25 @@ ant instead. You have been warned!
         </exclusion>
       </exclusions>
     </dependency>
-
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-hdfs</artifactId>
+      <version>${hadoopVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-mapreduce-client-common</artifactId>
+      <version>${hadoopVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-mapreduce-client-core</artifactId>
+      <version>${hadoopVersion}</version>
+    </dependency>
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase</artifactId>
-      <version>${hbaseVersion}</version>
+      <version>0.94.4</version>
       <exclusions>
         <exclusion>
           <groupId>org.apache.avro</groupId>
@@ -219,22 +234,22 @@ ant instead. You have been warned!
       <artifactId>hsqldb</artifactId>
       <version>1.8.0.10</version>
     </dependency>
-    <dependency>
-      <!--
+    <!--dependency>
+      &lt;!&ndash;
       FIXME we must depends on org.apache !
       <groupId>org.apache.hadoop</groupId>
-      -->
+      &ndash;&gt;
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-test</artifactId>
-      <version>${hadoopVersion}</version>
+      <version></version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
+    </dependency>-->
+   <!-- <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-mrunit</artifactId>
       <version>0.20.2-cdh3u1</version>
       <scope>test</scope>
-    </dependency>
+    </dependency>-->
 
     <dependency>
       <groupId>junit</groupId>
@@ -336,7 +351,7 @@ ant instead. You have been warned!
                       dir="${basedir}" failonerror="true">
                   <arg value="${basedir}/target/generated-sources"/>
                   <arg value="${version}" />
-                  <arg value="${gitHash}" />
+                  <!--<arg value="${gitHash}" />-->
                 </exec>
               </target>
             </configuration>
@@ -593,7 +608,24 @@ ant instead. You have been warned!
     </profile>
   </profiles>
 
-  <repositories>
+
+
+  <repositories><!-- 代码库 -->
+    <repository>
+      <id>maven-ali</id>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <!--<repositories>
     <repository>
       <id>cloudera.release</id>
       <url>https://repository.cloudera.com/content/repositories/releases/</url>
@@ -604,6 +636,6 @@ ant instead. You have been warned!
         <enabled>false</enabled>
       </snapshots>
     </repository>
-  </repositories>
+  </repositories>-->
 
 </project>
