@@ -306,6 +306,8 @@ ant instead. You have been warned!
           <artifactId>kite-data-hive</artifactId>
           <version>0.18.0</version>
       </dependency>
+      <!-- 太多的依赖了。懒的搞了。装个ant 吧。
+      -->
 
     <dependency>
       <groupId>org.slf4j</groupId>
