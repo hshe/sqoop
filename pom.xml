@@ -86,8 +86,8 @@ ant instead. You have been warned!
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compile.source>1.6</maven.compile.source>
-    <maven.compile.target>1.6</maven.compile.target>
+    <maven.compile.source>1.7</maven.compile.source>
+    <maven.compile.target>1.7</maven.compile.target>
     <avroVersion>1.5.2</avroVersion>
     <!--
     <hadoopVersion>0.20.203.0</hadoopVersion>
