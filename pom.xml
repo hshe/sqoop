@@ -296,6 +296,16 @@ ant instead. You have been warned!
           <artifactId>calcite-avatica</artifactId>
           <version>0.9.2-incubating</version>
       </dependency>
+      <dependency>
+          <groupId>org.kitesdk</groupId>
+          <artifactId>kite-data-mapreduce</artifactId>
+          <version>0.18.0</version>
+      </dependency>
+      <dependency>
+          <groupId>org.kitesdk</groupId>
+          <artifactId>kite-data-hive</artifactId>
+          <version>0.18.0</version>
+      </dependency>
 
     <dependency>
       <groupId>org.slf4j</groupId>
