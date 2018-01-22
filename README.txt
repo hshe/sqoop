@@ -44,3 +44,10 @@ See the COMPILING.txt document for for information.
 * Try running +asciidoc README.txt+
 * For more information about asciidoc, see http://www.methods.co.nz/asciidoc/
 
+# 由于依赖问题，使用该版本时，需要整个包替换，避免各种依赖包的缺失。
+测试方法：
+ ./bin/sqoop list-databases --connect jdbc:testmysql://localhost:3306 --username root --password root
+
+
+
+
