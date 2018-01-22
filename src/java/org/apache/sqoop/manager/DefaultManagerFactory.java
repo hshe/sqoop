@@ -35,6 +35,7 @@ import static org.apache.sqoop.manager.SupportedManagers.NETEZZA;
 import static org.apache.sqoop.manager.SupportedManagers.ORACLE;
 import static org.apache.sqoop.manager.SupportedManagers.POSTGRES;
 import static org.apache.sqoop.manager.SupportedManagers.SQLSERVER;
+import static org.apache.sqoop.manager.SupportedManagers.TEST;
 
 
 /**
@@ -93,6 +94,9 @@ public class DefaultManagerFactory
       }
     } else if (CUBRID.isTheManagerTypeOf(options)) {
       return new CubridManager(options);
+    }else if (TEST.isTheManagerTypeOf(options)) {//用于测试。
+      options.setConnectString(options.getConnectString().replace("jdbc:testmysql","jdbc:mysql"));
+      return new MySQLManager(options);
     } else {
       return null;
     }

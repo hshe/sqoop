@@ -24,7 +24,8 @@ public enum JdbcDrivers {
     SQLSERVER("com.microsoft.sqlserver.jdbc.SQLServerDriver", "jdbc:sqlserver:"),
     JTDS_SQLSERVER("net.sourceforge.jtds.jdbc.Driver", "jdbc:jtds:sqlserver:"),
     DB2("com.ibm.db2.jcc.DB2Driver", "jdbc:db2:"), DB2AS400("com.ibm.as400.access.AS400JDBCDriver", "jdbc:as400:"), NETEZZA("org.netezza.Driver", "jdbc:netezza:"),
-    CUBRID("cubrid.jdbc.driver.CUBRIDDriver", "jdbc:cubrid:");
+    CUBRID("cubrid.jdbc.driver.CUBRIDDriver", "jdbc:cubrid:"),
+    TEST("com.mysql.jdbc.Driver", "jdbc:testmysql:");
 
     private final String driverClass;
     private final String schemePrefix;
