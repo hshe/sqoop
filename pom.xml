@@ -115,7 +115,7 @@ ant instead. You have been warned!
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <version>1.4</version>
+      <version>2.7</version>
     </dependency>
     <dependency>
       <groupId>org.apache.avro</groupId>
